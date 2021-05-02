@@ -8,7 +8,7 @@ on:
       - 'fix/**'
 
     paths-ignore:
-      - 'docs/**'
+      - 'Docs/**'
 
 jobs:
   test_push:
