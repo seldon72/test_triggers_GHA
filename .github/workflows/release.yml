@@ -1,0 +1,35 @@
+name: 'Push Main'
+
+on:
+  push:
+    branches:
+      - 'main'
+
+    paths-ignore:
+      - 'Docs/**'
+
+jobs:
+  test_push:
+    name: 'Test push code on main branch'
+    environment: Prod
+    runs-on: ubuntu-latest
+    env:
+      GH_COMMENT: 'This is a test on main'
+      GH_STAGE: 'Push to main'
+      GH_SECRET: ${{ secrets.GH_SECRET }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cat File
+        run: cat message.txt
+
+      - name: Echo Stage
+        run: echo $GH_STAGE
+
+      - name: Echo Comment
+        run: echo $GH_COMMENT
+
+      - name: Echo Secret
+        run: echo $GH_SECRET

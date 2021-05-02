@@ -1,0 +1,37 @@
+name: 'Validate feature'
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'hotfix/**'
+      - 'fix/**'
+
+    paths-ignore:
+      - 'Docs/**'
+
+jobs:
+  test_push:
+    name: 'Test push code on feature branch'
+    environment: Dev
+    runs-on: ubuntu-latest
+    env:
+      GH_COMMENT: 'This is a test'
+      GH_STAGE: 'Push Branch'
+      GH_SECRET: ${{ secrets.GH_SECRET }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cat File
+        run: cat message.txt
+
+      - name: Echo Stage
+        run: echo $GH_STAGE
+
+      - name: Echo Comment
+        run: echo $GH_COMMENT
+
+      - name: Echo Secret
+        run: echo $GH_SECRET
