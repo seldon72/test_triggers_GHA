@@ -42,4 +42,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           path: ./.github/template-action
       - name: Run Terraform
-        uses: ./.github/template-action/actions/terraform.yml
+        uses: ./.github/template-action/actions
