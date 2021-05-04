@@ -40,6 +40,6 @@ jobs:
         with: 
           repository: seldon72/template-action
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./.github/actions/
+          path: ./.github/template-action
       - name: Run Terraform
-        uses: ./.github/actions/template-action/actions
+        uses: ./.github/template-action/actions/terraform.yml
