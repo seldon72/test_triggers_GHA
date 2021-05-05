@@ -1,6 +1,7 @@
 name: 'Validate feature'
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'feature/**'
@@ -35,11 +36,6 @@ jobs:
 
       - name: Echo Secret
         run: echo $GH_SECRET
-      - name: Checkout remote 
-        uses: actions/checkout@v2
-        with: 
-          repository: seldon72/template-action
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./.github/template-action
-      - name: Run Terraform
-        uses: ./.github/template-action/actions
+
+      - name: Branch
+        run: echo $GITHUB_REF

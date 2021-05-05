@@ -1,6 +1,7 @@
 name: 'Push Main'
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - 'release/**'
@@ -32,11 +33,4 @@ jobs:
 
       - name: Echo Comment
         run: echo $GH_COMMENT
-      - name: Checkout remote 
-        uses: actions/checkout@v2
-        with: 
-          repository: seldon72/template-action
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./.github/template-action
-      - name: Run Terraform
-        uses: ./.github/template-action/actions
+
