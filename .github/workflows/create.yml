@@ -1,24 +1,19 @@
-name: 'Validate feature'
+name: 'Create Branch'
 
 on:
   workflow_dispatch:
-  push:
+  create:
     branches:
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'fix/**'
-
-    paths-ignore:
-      - 'Docs/**'
+      - 'release/**'
 
 jobs:
   test_push:
-    name: 'Test push code on feature branch'
-    environment: Dev
+    name: 'Test create branch release'
+    environment: Prod
     runs-on: ubuntu-latest
     env:
-      GH_COMMENT: 'This is a test'
-      GH_STAGE: 'Push Branch'
+      GH_COMMENT: 'This is a test for creation'
+      GH_STAGE: 'Create Branch'
       GH_SECRET: ${{ secrets.GH_SECRET }}
     
     steps:
