@@ -1,6 +1,7 @@
 name: 'Push Main'
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - 'release/**'
@@ -32,3 +33,4 @@ jobs:
 
       - name: Echo Comment
         run: echo $GH_COMMENT
+

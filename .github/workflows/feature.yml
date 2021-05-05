@@ -1,6 +1,7 @@
 name: 'Validate feature'
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'feature/**'
@@ -35,3 +36,6 @@ jobs:
 
       - name: Echo Secret
         run: echo $GH_SECRET
+
+      - name: Branch
+        run: echo $GITHUB_REF
