@@ -2,11 +2,11 @@ name: 'Validate feature'
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'fix/**'
+  # push:
+  #   branches:
+  #     - 'feature/**'
+  #     - 'hotfix/**'
+  #     - 'fix/**'
 
     paths-ignore:
       - 'Docs/**'
