@@ -13,7 +13,7 @@ jobs:
     environment: Dev
     runs-on: ubuntu-latest
     env:
-      GH_COMMENT: 'This is a remote test'
+      GH_COMMENT: 'This is a remote test with step names'
       GH_STAGE: 'Push Branch'
       GH_SECRET: ${{ secrets.GH_SECRET }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
